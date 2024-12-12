@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: InternalPaymentService
+### Docker compose configuration
+  docker:
+    compose:
+      file: docker-compose.yml
+      enabled: true
+### Database configuration
+  datasource:
+    # Change values to env variables, may be fetched from a secret vault eg: hashicorp, kubernetes secrets.
+    url: jdbc:postgresql://localhost:5432/mydatabase
+    username: myuser
+    password: secret
+    driver-class-name: org.postgresql.Driver
+  flyway:
+    enabled: true
+    locations: classpath:db/migration/postgres
+    baseline-version: 0
+  jpa:
+    open-in-view: false
+    generate-ddl: false
+  sql:
+    init:
+      mode: never

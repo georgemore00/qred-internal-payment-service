@@ -1,0 +1,3 @@
+payment_date, amount, type, contract_number
+2024-01-30,some large amount,incoming,12345
+2024-01-31,some small amount,outgoing,54321
